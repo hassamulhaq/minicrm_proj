@@ -19,13 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
+Route::get('/dashboard', function () {
     return view('layouts.dashboard');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::prefix('admin')
