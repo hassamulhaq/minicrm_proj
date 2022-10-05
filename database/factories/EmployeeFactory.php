@@ -17,7 +17,7 @@ class EmployeeFactory extends Factory
             'last_name' => $this->faker->lastName(),
             'email' => $this->faker->unique()->safeEmail(),
             'phone' => $this->faker->phoneNumber(),
-            'company_id' => Company::all(['id'])->random(),
+            'company_id' => Company::pluck('id')->random(),
         ];
     }
 }
