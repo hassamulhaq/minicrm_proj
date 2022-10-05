@@ -1,5 +1,4 @@
 import $ from 'jquery'
-import flowbite from "flowbite"
 window.jQuery = window.$ = $
 
 
