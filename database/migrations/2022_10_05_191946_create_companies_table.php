@@ -10,7 +10,7 @@ return new class extends Migration {
         Schema::create('companies', function (Blueprint $table) {
             $table->uuid('id')->unique();
             $table->string('name', 200);
-            $table->string('email', 200)->unique()->nullable();
+            $table->string('email')->unique()->nullable();
             $table->string('logo', 500)->comment('logo path')->nullable();
 
             $table->timestamps();

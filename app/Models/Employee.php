@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Ramsey\Uuid\Uuid;
 
 class Employee extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'first_name',
         'last_name',
@@ -14,6 +17,8 @@ class Employee extends Model
         'phone',
         'company_id',
     ];
+
+    protected $keyType = 'string';
 
     public static function boot() {
         parent::boot();
