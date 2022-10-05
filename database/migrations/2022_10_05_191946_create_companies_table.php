@@ -8,9 +8,10 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('companies', function (Blueprint $table) {
-            $table->id();
-
-
+            $table->uuid('id')->unique();
+            $table->string('name', 200);
+            $table->string('email', 200)->unique()->nullable();
+            $table->string('logo', 500)->comment('logo path')->nullable();
 
             $table->timestamps();
         });
