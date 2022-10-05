@@ -17,18 +17,6 @@
             </div>
         </div>
 
-        <!-- SidebarSearch Form -->
-        <div class="form-inline">
-            <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-sidebar">
-                        <i class="fas fa-search fa-fw"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column nav-flat nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
@@ -48,7 +36,7 @@
 
                 <li class="nav-item">
                     <a href="{{ route('admin.company.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>
                             {{ __('Companies') }}
                             <i class="right fas fa-angle-left"></i>
@@ -73,7 +61,7 @@
 
                 <li class="nav-item">
                     <a href="{{ route('admin.employee.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>
                             {{ __('Employees') }}
                             <i class="right fas fa-angle-left"></i>
@@ -100,7 +88,7 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <i class="nav-icon far fa-circle text-danger"></i>
-                            <button type="submit" class="text">{{ __('Log Out') }}</button>
+                            <p><button type="submit" class="text">{{ __('Log Out') }}</button></p>
                         </form>
                     </a>
                 </li>
