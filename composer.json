@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "hassamulhaq/minicrm_proj",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Laravel Mini CRM",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
