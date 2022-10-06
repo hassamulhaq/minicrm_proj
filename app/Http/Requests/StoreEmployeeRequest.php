@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\PhoneNumber;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -14,7 +15,7 @@ class StoreEmployeeRequest extends FormRequest
             'first_name' => 'required|string|max:150',
             'last_name' => 'required|string|max:150',
             'email' => 'nullable|email|unique:employees,email',
-            'phone' => 'nullable|numeric',
+            'phone' => ['nullable', new PhoneNumber()],
             'company_id' => 'nullable|exists:companies,id',
         ];
     }
