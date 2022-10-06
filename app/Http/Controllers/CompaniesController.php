@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\CompanyRegisteredEvent;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Models\Company;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -24,7 +26,7 @@ class CompaniesController extends Controller
     {
         $company = Company::create($request->validated());
 
-        if ($request->has('company_logo')) {
+        if ($request->has('company_logo') && is_object($company)) {
             $file = $request->file('company_logo');
             $name  = uniqid() . '-' . str_replace(' ', '', $file->getClientOriginalName());
             $path = $request->file('company_logo')->storePubliclyAs(Company::FILE_PATH, $name, 'public');
@@ -32,6 +34,9 @@ class CompaniesController extends Controller
             $model = Company::find($company->id);
             $model->update(['logo' =>  Company::FILE_ACCESS_PATH . $path]);
         }
+
+        // event dispatched
+        \Event::dispatch(new CompanyRegisteredEvent($company));
 
         return \response()->json([
             'success' => true,
