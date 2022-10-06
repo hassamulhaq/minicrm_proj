@@ -20,7 +20,7 @@
     <div class="wrapper">
         <div style="padding: 8px 0 10px 0">New Company Registered: <strong> {{ $company['name'] }} </strong></div>
 
-        <table cellspacing="6px" align="left">
+        <table cellspacing="6px">
             <thead>
             <tr>
                 <th>Name</th>
