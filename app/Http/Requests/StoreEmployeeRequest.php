@@ -25,6 +25,19 @@ class StoreEmployeeRequest extends FormRequest
         return true;
     }
 
+    public function messages(): array
+    {
+        return [
+            'first_name.required' => 'Firstname required',
+            'first_name.max' => 'Max size will be 150',
+            'last_name.required' => 'Lastname required',
+            'last_name.max' => 'Max size will be 150',
+            'email.email' => 'Not a valid email',
+            'email.unique' => 'Email already exists.',
+            'company_id.exists' => 'Invalid Company Id',
+        ];
+    }
+
     /**
      * Handle a failed validation attempt.
      *

@@ -13,13 +13,27 @@ class UpdateCompanyRequest extends FormRequest
         return [
             'name' => 'required|string|max:200',
             'email' => 'nullable|email',
-            'thumbnail' => 'nullable|file|dimensions:min_width=100,min_height=100|mimes:jpeg,jpg,png,gif,svg|max:100000',
+            'company_logo' => 'nullable|image|dimensions:min_width=100,min_height=100|mimes:jpeg,jpg,png,gif,svg,webp|max:100000',
         ];
     }
 
     public function authorize(): bool
     {
         return true;
+    }
+
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'Company :attribute required',
+            'name.max' => 'Max size will be 200',
+            'email.email' => 'Not a valid email',
+            'email.unique' => 'Email already exists.',
+            'company_logo.required' => 'Logo required',
+            'company_logo.dimensions' => 'Min width 100. Max width 100',
+            'company_logo.mimes' => 'Valid ext are jpeg,jpg,png,gif,svg,webp',
+            'company_logo.max' => 'Maximum size 10MB',
+        ];
     }
 
     /**
