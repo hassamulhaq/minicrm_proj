@@ -18,8 +18,12 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset("plugins/overlayScrollbars/css/OverlayScrollbars.min.css") }}">
 
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset("dist/css/adminlte.min.css") }}">
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     @stack('css_after')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -74,6 +78,12 @@
 
 <!-- overlayScrollbars -->
 <script src="{{ asset("plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js") }}"></script>
+
+<!-- AdminLTE App -->
+<script src="{{ asset("dist/js/adminlte.js") }}"></script>
+
+<!-- AdminLTE for demo purposes -->
+<script src="{{ asset("dist/js/demo.js") }}"></script>
 
 @stack('js_after')
 </body>
