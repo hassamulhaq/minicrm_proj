@@ -36,7 +36,7 @@
                                 <tr>
                                     <th style="width: 10px">#</th>
                                     <th>Logo</th>
-                                    <th>Name</th>
+                                    <th>Fullname</th>
                                     <th style="width: 40px">Email</th>
                                     <th>Action</th>
                                 </tr>
@@ -48,7 +48,7 @@
                                         <td>
                                             <img width="40" src="{{ !is_null($employee->logo) ? $employee->logo : \App\Helpers\Constants::PLACEHOLDER_IMAGE }}" alt="Logo">
                                         </td>
-                                        <td> {{ $employee->name }} </td>
+                                        <td> {{ $employee->fullname }} </td>
                                         <td> {{ $employee->email }} </td>
                                         <td>
                                             <div class="btn-group">
