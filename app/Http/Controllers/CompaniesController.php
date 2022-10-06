@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events\CompanyRegisteredEvent;
 use App\Http\Requests\StoreCompanyRequest;
+use App\Http\Requests\UpdateCompanyRequest;
 use App\Models\Company;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -52,11 +53,29 @@ class CompaniesController extends Controller
 
     public function edit(Company $company)
     {
+        return view('company.update', compact('company'));
     }
 
-    public function update(Request $request, Company $company)
+    public function update(UpdateCompanyRequest $request, Company $company)
     {
+        $company = Company::find($company->id);
 
+        // only update logo if new file assign, if not then stain old one
+        if ($request->has('company_logo')) {
+            $file = $request->file('company_logo');
+            $name  = uniqid() . '-' . str_replace(' ', '', $file->getClientOriginalName());
+            $path = $request->file('company_logo')->storePubliclyAs(Company::FILE_PATH, $name, 'public');
+
+            $company->update(['logo' =>  Company::FILE_ACCESS_PATH . $path]);
+        }
+
+        $company->update($request->validated());
+
+        return \response()->json([
+            'success' => true,
+            'message' => 'Record Updated!',
+            'data' => []
+        ]);
     }
 
     public function destroy(Company $company)
