@@ -31,6 +31,7 @@ class StoreCompanyRequest extends FormRequest
             'email.email' => 'Not a valid email',
             'email.unique' => 'Email already exists.',
             'company_logo.required' => 'Logo required',
+            'company_logo.image' => 'Logo must be image',
             'company_logo.dimensions' => 'Min width 100. Max width 100',
             'company_logo.mimes' => 'Valid ext are jpeg,jpg,png,gif,svg,webp',
             'company_logo.max' => 'Maximum size 10MB',
