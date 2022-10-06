@@ -17,5 +17,7 @@
 ```
 
 ### Login details
- - email: admin@admin.com
- - password: password
+```
+ email: admin@admin.com
+ password: password
+```
