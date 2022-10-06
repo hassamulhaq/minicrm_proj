@@ -31,7 +31,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form method="post" action="{{ route('admin.company.update', $company) }}" enctype="multipart/form-data" autocomplete="off">
+                        <form class="ajax_form" method="post" action="{{ route('admin.company.update', $company) }}" enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             @method('PUT')
 
@@ -93,6 +93,10 @@
             $(function () {
                 bsCustomFileInput.init();
             });
+
+            $('.ajax_form').submit( function (e) {
+                ajaxRequest(e);
+            })
         </script>
     @endpush
 

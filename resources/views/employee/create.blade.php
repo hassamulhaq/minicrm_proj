@@ -117,6 +117,11 @@
                 $('#company').append(options);
             });
 
+
+            $('.ajax_form').submit( function (e) {
+                ajaxRequest(e);
+            })
+
         </script>
     @endpush
 

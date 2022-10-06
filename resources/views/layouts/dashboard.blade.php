@@ -18,6 +18,9 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset("plugins/overlayScrollbars/css/OverlayScrollbars.min.css") }}">
 
+    <!-- sweetalert2 -->
+    <link rel="stylesheet" href="{{ asset('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset("dist/css/adminlte.min.css") }}">
 
@@ -31,6 +34,10 @@
 
     <!-- Preloader -->
     <x-screen-placeholder/>
+
+    <!-- loader -->
+    <x-screen-spinner />
+    <!-- /_loader -->
 
     <!-- Navbar -->
     <x-top-navbar/>
@@ -84,6 +91,13 @@
 
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset("dist/js/demo.js") }}"></script>
+
+<!-- sweetalert2 -->
+<script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+
+
+<!-- custom js -->
+<script src="{{ asset("dist/js/custom.js") }}"></script>
 
 @stack('js_after')
 </body>
