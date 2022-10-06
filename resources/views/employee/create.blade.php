@@ -72,7 +72,9 @@
 
                                 <div class="form-group">
                                     <label for="company">Company</label>
-                                    <select id="company" name="company_id" class="js_select select2 form-control"></select>
+                                    <select id="company" name="company_id" class="js_select select2 form-control">
+                                        <option value="" disabled selected>Choose Company</option>
+                                    </select>
                                 </div>
                             </div>
                             <!-- /.card-body -->
