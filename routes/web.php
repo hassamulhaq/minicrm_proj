@@ -36,6 +36,9 @@ Route::prefix('admin')
         Route::resource('company', CompaniesController::class);
         Route::resource('employee', EmployeesController::class);
 
+        // DataTable
+        Route::get('/simple-companies', [CompaniesController::class, 'simpleCompanies'])->name('company.simple-companies');
+
 
         Route::get('/get-companies', [CompaniesController::class, 'getAllCompanies'])->name('get-all-companies');
     });

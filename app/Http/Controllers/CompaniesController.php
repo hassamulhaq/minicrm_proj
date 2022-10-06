@@ -88,4 +88,11 @@ class CompaniesController extends Controller
     public function getAllCompanies() {
         return Company::all(['id', 'name']);
     }
+
+
+    public function simpleCompanies()
+    {
+        $companies = Company::all();
+        return view('company.simple-index', compact('companies'));
+    }
 }

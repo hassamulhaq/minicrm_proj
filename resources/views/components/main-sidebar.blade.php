@@ -48,6 +48,11 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>{{ __('List Companies') }}</p>
                             </a>
+                            <a href="{{ route('admin.company.simple-companies') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{ __('List Companies DT') }}</p>
+                            </a>
+
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.company.create') }}" class="nav-link">
