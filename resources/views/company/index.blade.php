@@ -52,7 +52,8 @@
                                         <td> {{ $company->email }} </td>
                                         <td>
                                             <div class="btn-group">
-                                                <a href="" class="btn btn-sm btn-outline-info">Edit</a>
+                                                <a href="{{ route('admin.company.show', $company) }}" class="btn btn-sm btn-outline-success">Show</a>
+                                                <a href="{{ route('admin.company.edit', $company) }}" class="btn btn-sm btn-outline-info">Edit</a>
                                                 <form class="form-inline border-0 rounded-0" action="{{ route('admin.company.destroy', $company->id) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')

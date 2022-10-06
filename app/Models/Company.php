@@ -33,4 +33,10 @@ class Company extends Model
             }
         });
     }
+
+
+    public function employees(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Employee::class);
+    }
 }
