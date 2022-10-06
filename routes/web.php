@@ -35,6 +35,9 @@ Route::prefix('admin')
 
         Route::resource('company', CompaniesController::class);
         Route::resource('employee', EmployeesController::class);
+
+
+        Route::get('/get-companies', [CompaniesController::class, 'getAllCompanies'])->name('get-all-companies');
     });
 
 require __DIR__.'/auth.php';

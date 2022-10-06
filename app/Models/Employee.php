@@ -19,6 +19,10 @@ class Employee extends Model
     ];
 
     protected $keyType = 'string';
+    public $incrementing = false;
+
+    const FILE_PATH = '/uploads/files';
+    const FILE_ACCESS_PATH =  '/storage/';
 
     public static function boot() {
         parent::boot();

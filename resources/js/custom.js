@@ -1,6 +1,5 @@
-import $ from 'jquery'
-window.jQuery = window.$ = $
-
+// import $ from 'jquery'
+// window.jQuery = window.$ = $
 
 import "./adminlte"
 import "./demo"

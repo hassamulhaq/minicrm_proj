@@ -63,4 +63,8 @@ class CompaniesController extends Controller
             'data' => []
         ]);
     }
+
+    public function getAllCompanies() {
+        return Company::all(['id', 'name']);
+    }
 }

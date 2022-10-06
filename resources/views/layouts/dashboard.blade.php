@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Mini CRM | Dashboard</title>
 
+    @stack('css_before')
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset("plugins/fontawesome-free/css/all.min.css") }}">
 
@@ -64,6 +65,9 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset("plugins/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
+
+<!-- moment -->
+<script src="{{ asset("plugins/moment/moment.min.js") }}"></script>
 
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{ asset("plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js") }}"></script>
