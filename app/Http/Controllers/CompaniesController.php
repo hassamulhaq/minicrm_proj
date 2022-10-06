@@ -62,11 +62,7 @@ class CompaniesController extends Controller
     {
         $company->delete();
 
-        return \response()->json([
-            'success' => true,
-            'message' => 'Record Deleted',
-            'data' => []
-        ]);
+        return redirect()->route('admin.company.index')->with(['message' => 'Record Deleted!']);
     }
 
     public function getAllCompanies() {
