@@ -38,6 +38,7 @@ Route::prefix('admin')
 
         // DataTable
         Route::get('/simple-companies', [CompaniesController::class, 'simpleCompanies'])->name('company.simple-companies');
+        Route::get('/serverside-companies', [CompaniesController::class, 'serversideCompanies'])->name('company.serverside-companies');
 
 
         Route::get('/get-companies', [CompaniesController::class, 'getAllCompanies'])->name('get-all-companies');
