@@ -35,11 +35,13 @@
                                 <table class="table table-sm table-bordered table-hover dataTable dtr-inline DataTable">
                                     <thead>
                                     <tr>
+{{--                                        <th>#</th>--}}
                                         <th>ID</th>
                                         <th>Logo</th>
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>No. of Employees</th>
+                                        <th>{{ __('Created At') }}</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -75,17 +77,14 @@
                     serverSide: true,
                     ajax: "{{ route('api.company.serverside-companies-render') }}",
                     "columns": [
-                        { "data": "id",  "name": 'id' },
-                        { "data": "logo" },
-                        { "data": "name" },
-                        { "data": "email" },
-                        { "data": "employees_count" },
-                        {
-                            "data": 'action',
-                            "name": 'action',
-                            "orderable": true,
-                            "searchable": true
-                        }
+                        // { data: "DT_RowIndex",  name: "DT_RowIndex" },
+                        { data: "id",  name: "id" },
+                        { data: "logo",  name: "logo" },
+                        { data: "name",  name: "name" },
+                        { data: "email",  name: "email" },
+                        { data: "employees_count",  name: "employees_count" },
+                        { data: "created_at",  name: "created_at" },
+                        { data: 'action', name: 'action' }
                     ]
                 });
             });
